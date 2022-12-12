@@ -1,7 +1,4 @@
 #include <stdio.h>          // Standard input output library
-#include <time.h>           // For initialization for randum number generator
-#include <unistd.h>
-#include <math.h>
 #include <SDL2/SDL.h>       // SDL2 for graphical window
                             
 #define CAM_WIDTH 1280      
@@ -43,13 +40,6 @@ const int GRID_SIZE = ROWS*COLUMNS;
 int mouseX, mouseY;
 char mouseClick = 0;
 char clickTimer = 0;
-
-
-
-float Rand01()
-{
-    return (float)(rand()%1000)/1000;
-}
 
 char Rule(Pixel* grid, int index)
 {
@@ -274,9 +264,6 @@ int Reset()
 
 int GameWindow()
 {
-    // Initialize random number generator
-    srand(time(NULL));
-
     if (InitSDL() < 0)
         return -1;
 
